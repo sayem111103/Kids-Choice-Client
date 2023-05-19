@@ -49,7 +49,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    {user ? <><FaUserCircle className='text-4xl cursor-pointer mr-3'></FaUserCircle>
+                    {user ? <><div className='btn btn-ghost btn-circle avatar overflow-hidden mr-4'><img title={user.displayName} className='w-full h-full' src={user.photoURL} alt={user.photoURL} /></div>
                         <button onClick={logOut} className='btn'>Logout</button></> : <><FaUserCircle className='text-4xl cursor-pointer mr-3'></FaUserCircle>
                         <Link to='/login'><button className='btn'>Login</button></Link></>}
                 </div>

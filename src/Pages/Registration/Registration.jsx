@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { authContext } from "../../Auth/Auth";
 import Swal from "sweetalert2";
+import { updateProfile } from "firebase/auth";
 
 const Registration = () => {
     let navigate = useNavigate();
@@ -11,6 +12,7 @@ const Registration = () => {
     const [error, setError] = useState('')
     const { userWithEmailPass } = useContext(authContext)
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
+
     const onSubmit = data => {
         setError('')
         const name = data.name;
@@ -21,7 +23,6 @@ const Registration = () => {
             .then((userCredential) => {
                 // Signed in 
                 const user = userCredential.user;
-                console.log(user);
                 Swal.fire({
                     position: 'top-end',
                     icon: 'success',
@@ -30,6 +31,7 @@ const Registration = () => {
                     timer: 1500
                 })
                 navigate(from, { replace: true });
+                updatesProfile(user, name, photo)
                 // ...
             })
             .catch((error) => {
@@ -37,7 +39,25 @@ const Registration = () => {
                 setError(errorMessage);
                 // ..
             });
+        
     };
+
+    const updatesProfile = (user, name, photo) =>{
+        updateProfile(user,{
+            displayName: name,
+            photoURL: photo
+        })
+        .then(() => {
+            // Profile updated!
+            location.reload()
+            // ...
+          }).catch((error) => {
+            // An error occurred
+            setError(error.message)
+            // ...
+          });
+    }
+
     return (
         <div className="min-h-screen py-16 bg-base-200">
             <div className="text-center">

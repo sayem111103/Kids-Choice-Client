@@ -21,7 +21,6 @@ const Login = () => {
         .then((userCredential) => {
             // Signed in 
             const user = userCredential.user;
-            console.log(user);
             Swal.fire({
                 position: 'top-end',
                 icon: 'success',
@@ -33,12 +32,13 @@ const Login = () => {
               navigate(from, { replace: true });
             // ...
           })
+          
           .catch((error) => {
             const errorMessage = error.message;
             setError(errorMessage)
           });
     }
-    
+
     return (
         <>
             <div className="min-h-screen py-16 bg-base-200">
