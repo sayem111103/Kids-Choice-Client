@@ -4,6 +4,7 @@ import { FcGoogle } from 'react-icons/all';
 import { authContext } from '../../Auth/Auth';
 import Swal from 'sweetalert2';
 import useTitle from '../../Hooks/useTitle';
+import { GoogleAuthProvider } from 'firebase/auth';
 
 const Login = () => {
     useTitle('Login')
@@ -11,7 +12,8 @@ const Login = () => {
     let location = useLocation();
     let from = location.state?.from?.pathname || "/";
     const [error, setError] = useState('')
-    const { signinWithEmailPass } = useContext(authContext)
+    const { signinWithEmailPass, signWithGoogle } = useContext(authContext);
+
     const handleLogin = (e) => {
         setError('')
         e.preventDefault()
@@ -36,6 +38,27 @@ const Login = () => {
             })
 
             .catch((error) => {
+                const errorMessage = error.message;
+                setError(errorMessage)
+            });
+    }
+
+    const loginWithGoogle = () => {
+        const google = new GoogleAuthProvider();
+        signWithGoogle(google)
+            .then((result) => {
+                const user = result.user;
+                console.log(user);
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Login Successfully',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                navigate(from, { replace: true });
+
+            }).catch((error) => {
                 const errorMessage = error.message;
                 setError(errorMessage)
             });
@@ -74,7 +97,7 @@ const Login = () => {
                             <div className="flex flex-col w-full border-opacity-50">
                                 <div className="divider">OR</div>
                                 <div className="grid h-20 card place-items-center">
-                                    <FcGoogle className='text-5xl cursor-pointer'></FcGoogle>
+                                    <FcGoogle onClick={loginWithGoogle} className='text-5xl cursor-pointer'></FcGoogle>
                                 </div>
                             </div>
                         </form>
