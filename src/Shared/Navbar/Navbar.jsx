@@ -2,15 +2,32 @@ import { FaUserCircle } from 'react-icons/all';
 import { Link } from 'react-router-dom';
 import { authContext } from '../../Auth/Auth';
 import { useContext } from 'react';
-const Navbar = () => {    
-    const {user} = useContext(authContext);
+import Swal from 'sweetalert2';
+import { signOut } from 'firebase/auth';
+const Navbar = () => {
+    const { auth, user } = useContext(authContext);
+
+    const logOut = () => {
+        signOut(auth).then(() => {
+            // Sign-out successful.
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'logout successfully',
+                showConfirmButton: false,
+                timer: 1500
+            })
+        }).catch((error) => {
+            console.log(error.message);
+        });
+    }
 
     const navitem = <>
-    <li><Link className='text-sm font-bold' to='/'>Home</Link></li>
-    <li><Link className='text-sm font-bold' to='/alltoys'>All Toys</Link></li>
-    {user?<><li><Link className='text-sm font-bold' to='/mytoys'>My Toys</Link></li>
-    <li><Link className='text-sm font-bold' to='/addatoy'>Add A Toy</Link></li></>:''}
-    <li><Link className='text-sm font-bold' to='/blogs'>Blogs</Link></li>
+        <li><Link className='text-sm font-bold' to='/'>Home</Link></li>
+        <li><Link className='text-sm font-bold' to='/alltoys'>All Toys</Link></li>
+        {user ? <><li><Link className='text-sm font-bold' to='/mytoys'>My Toys</Link></li>
+            <li><Link className='text-sm font-bold' to='/addatoy'>Add A Toy</Link></li></> : ''}
+        <li><Link className='text-sm font-bold' to='/blogs'>Blogs</Link></li>
     </>
     return (
         <>
@@ -28,13 +45,13 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
-                    {navitem}
+                        {navitem}
                     </ul>
                 </div>
                 <div className="navbar-end">
-                   {user? <><FaUserCircle className='text-4xl cursor-pointer mr-3'></FaUserCircle>
-                   <button className='btn'>Logout</button></> : <><FaUserCircle className='text-4xl cursor-pointer mr-3'></FaUserCircle>
-                   <Link to='/login'><button className='btn'>Login</button></Link></>}
+                    {user ? <><FaUserCircle className='text-4xl cursor-pointer mr-3'></FaUserCircle>
+                        <button onClick={logOut} className='btn'>Logout</button></> : <><FaUserCircle className='text-4xl cursor-pointer mr-3'></FaUserCircle>
+                        <Link to='/login'><button className='btn'>Login</button></Link></>}
                 </div>
             </div>
         </>

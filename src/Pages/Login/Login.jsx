@@ -1,23 +1,47 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/all';
+import { authContext } from '../../Auth/Auth';
+import Swal from 'sweetalert2';
 
 const Login = () => {
+    let navigate = useNavigate();
+    let location = useLocation();
+    let from = location.state?.from?.pathname || "/";
     const [error, setError] = useState('')
-    const handleLogin = (e) =>{
+    const { signinWithEmailPass } = useContext(authContext)
+    const handleLogin = (e) => {
+        setError('')
         e.preventDefault()
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
-        const user = {
-            email,
-            password
-        }
-        console.log(user);
+
+        signinWithEmailPass(email, password)
+        .then((userCredential) => {
+            // Signed in 
+            const user = userCredential.user;
+            console.log(user);
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'login successfully',
+                showConfirmButton: false,
+                timer: 1500
+              })
+              form.reset()
+              navigate(from, { replace: true });
+            // ...
+          })
+          .catch((error) => {
+            const errorMessage = error.message;
+            setError(errorMessage)
+          });
     }
+    
     return (
         <>
-            <div className="min-h-screen py-5 bg-base-200">
+            <div className="min-h-screen py-16 bg-base-200">
                 <div>
                     <div className="text-center">
                         <h1 className="text-5xl font-bold">Login now!</h1>
@@ -25,7 +49,7 @@ const Login = () => {
                     </div>
                     <div className="card w-1/3 mx-auto shadow-2xl bg-base-100">
                         <form onSubmit={handleLogin} className="card-body">
-                            <p>{error}</p>
+                            <p className='text-red-500'>{error}</p>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
