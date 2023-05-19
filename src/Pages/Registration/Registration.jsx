@@ -39,23 +39,23 @@ const Registration = () => {
                 setError(errorMessage);
                 // ..
             });
-        
+
     };
 
-    const updatesProfile = (user, name, photo) =>{
-        updateProfile(user,{
+    const updatesProfile = (user, name, photo) => {
+        updateProfile(user, {
             displayName: name,
             photoURL: photo
         })
-        .then(() => {
-            // Profile updated!
-            location.reload()
-            // ...
-          }).catch((error) => {
-            // An error occurred
-            setError(error.message)
-            // ...
-          });
+            .then(() => {
+                // Profile updated!
+                location.reload()
+                // ...
+            }).catch((error) => {
+                // An error occurred
+                setError(error.message)
+                // ...
+            });
     }
 
     return (

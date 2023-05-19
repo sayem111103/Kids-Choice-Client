@@ -18,25 +18,25 @@ const Login = () => {
         const password = form.password.value;
 
         signinWithEmailPass(email, password)
-        .then((userCredential) => {
-            // Signed in 
-            const user = userCredential.user;
-            Swal.fire({
-                position: 'top-end',
-                icon: 'success',
-                title: 'login successfully',
-                showConfirmButton: false,
-                timer: 1500
-              })
-              form.reset()
-              navigate(from, { replace: true });
-            // ...
-          })
-          
-          .catch((error) => {
-            const errorMessage = error.message;
-            setError(errorMessage)
-          });
+            .then((userCredential) => {
+                // Signed in 
+                const user = userCredential.user;
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'login successfully',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+                form.reset()
+                navigate(from, { replace: true });
+                // ...
+            })
+
+            .catch((error) => {
+                const errorMessage = error.message;
+                setError(errorMessage)
+            });
     }
 
     return (

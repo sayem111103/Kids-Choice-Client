@@ -12,33 +12,33 @@ const router = createBrowserRouter([
     {
         path: '/',
         element: <Main></Main>,
-        children:[
+        children: [
             {
-                path:'/',
+                path: '/',
                 element: <Home></Home>
             },
             {
-                path:'addatoy',
-                element:<PrivateRoutes><Addtoy></Addtoy></PrivateRoutes>
+                path: 'addatoy',
+                element: <PrivateRoutes><Addtoy></Addtoy></PrivateRoutes>
             },
             {
-                path:'mytoys',
-                element:<PrivateRoutes><Mytoy></Mytoy></PrivateRoutes>
+                path: 'mytoys',
+                element: <PrivateRoutes><Mytoy></Mytoy></PrivateRoutes>
             }
         ]
     },
 
     {
-        path:'/',
-        element:<LoginLayout></LoginLayout>,
-        children:[
+        path: '/',
+        element: <LoginLayout></LoginLayout>,
+        children: [
             {
-                path:'login',
-                element:<Login></Login>
+                path: 'login',
+                element: <Login></Login>
             },
             {
-                path:'registration',
-                element:<Registration></Registration>
+                path: 'registration',
+                element: <Registration></Registration>
             }
         ]
     }
