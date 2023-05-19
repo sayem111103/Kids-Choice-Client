@@ -34,7 +34,7 @@ const Navbar = () => {
                 <div className="navbar-end">
                    {user? <><FaUserCircle className='text-4xl cursor-pointer mr-3'></FaUserCircle>
                    <button className='btn'>Logout</button></> : <><FaUserCircle className='text-4xl cursor-pointer mr-3'></FaUserCircle>
-                   <button className='btn'>Login</button></>}
+                   <Link to='/login'><button className='btn'>Login</button></Link></>}
                 </div>
             </div>
         </>
