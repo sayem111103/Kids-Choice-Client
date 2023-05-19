@@ -7,18 +7,20 @@ import Registration from "../Pages/Registration/Registration";
 import Addtoy from "../Pages/Addtoy/Addtoy";
 import Mytoy from "../Pages/Mytoy/Mytoy";
 import PrivateRoutes from "./PrivateRoutes";
+import Error from "../Pages/Error/Error";
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <Main></Main>,
+        errorElement:<Error></Error>,
         children: [
             {
                 path: '/',
                 element: <Home></Home>
             },
             {
-                path: 'addatoy',
+                path: 'addtoy',
                 element: <PrivateRoutes><Addtoy></Addtoy></PrivateRoutes>
             },
             {
