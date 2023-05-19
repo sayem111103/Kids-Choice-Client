@@ -3,8 +3,10 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/all';
 import { authContext } from '../../Auth/Auth';
 import Swal from 'sweetalert2';
+import useTitle from '../../Hooks/useTitle';
 
 const Login = () => {
+    useTitle('Login')
     let navigate = useNavigate();
     let location = useLocation();
     let from = location.state?.from?.pathname || "/";

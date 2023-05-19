@@ -4,8 +4,10 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { authContext } from "../../Auth/Auth";
 import Swal from "sweetalert2";
 import { updateProfile } from "firebase/auth";
+import useTitle from "../../Hooks/useTitle";
 
 const Registration = () => {
+    useTitle('Registration')
     let navigate = useNavigate();
     let location = useLocation();
     let from = location.state?.from?.pathname || "/";
