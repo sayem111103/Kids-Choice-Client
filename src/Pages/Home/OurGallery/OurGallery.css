@@ -1,0 +1,8 @@
+.toy-item:hover .image{
+    transform: scale(1.2);
+    transition: all linear .4s;
+}
+
+.toy-item{
+    transition: all linear .4s;
+}
