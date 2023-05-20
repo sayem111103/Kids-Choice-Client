@@ -58,9 +58,9 @@ const ShopByCategory = () => {
                     </TabPanel>
 
                     <TabPanel>
-                        <div className='flex justify-center gap-6 mt-8'>
+                        <div className='flex justify-center flex-wrap gap-6 mt-8'>
                             {carData.map(cd =>
-                                <div key={cd._id} className="card w-96 bg-base-100 shadow-xl">
+                                <div key={cd._id} className="card w-[370px] bg-base-100 shadow-xl">
                                     <figure><img className="h-60 w-full" src={cd.img} alt={cd.img} /></figure>
                                     <div className="card-body">
                                         <h2 className="card-title">
@@ -83,9 +83,9 @@ const ShopByCategory = () => {
                     </TabPanel>
 
                     <TabPanel>
-                        <div className='flex justify-center gap-6 mt-8'>
+                        <div className='flex justify-center flex-wrap gap-6 mt-8'>
                             {carData.map(cd =>
-                                <div key={cd._id} className="card w-96 bg-base-100 shadow-xl">
+                                <div key={cd._id} className="card w-[370px] bg-base-100 shadow-xl">
                                     <figure><img className="h-60 w-full" src={cd.img} alt={cd.img} /></figure>
                                     <div className="card-body">
                                         <h2 className="card-title">

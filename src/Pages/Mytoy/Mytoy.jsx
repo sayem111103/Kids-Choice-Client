@@ -3,12 +3,12 @@ import useTitle from "../../Hooks/useTitle";
 import { authContext } from "../../Auth/Auth";
 import { RiDeleteBin6Fill, BiEdit } from 'react-icons/all';
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
-const Mytoy = () => {
+const Mytoy = () => {    
     const { user } = useContext(authContext)
     const [mytoy, setMyToy] = useState([])
     useTitle('My Toys')
-
     useEffect(() => {
         fetch(`https://toy-marketplace-server-sayem111103.vercel.app/mytoy?email=${user.email}`)
             .then(res => res.json())
@@ -44,10 +44,6 @@ const Mytoy = () => {
                     })
             }
         })
-    }
-
-    const handleEdit = () => {
-
     }
 
     return (
@@ -92,7 +88,7 @@ const Mytoy = () => {
                                 <RiDeleteBin6Fill onClick={() => handleDelete(cd._id)} className="text-3xl mx-auto text-red-500 cursor-pointer"></RiDeleteBin6Fill>
                             </th>
                             <th>
-                                <BiEdit onClick={() => console.log(cd._id)} className="text-3xl mx-auto cursor-pointer"></BiEdit>
+                                <Link to={`/update/${cd._id}`}><BiEdit className="text-3xl mx-auto cursor-pointer"></BiEdit></Link>
                             </th>
                             <th className="text-center">
                                 <button onClick={() => console.log(cd._id)} className="btn">details</button>
