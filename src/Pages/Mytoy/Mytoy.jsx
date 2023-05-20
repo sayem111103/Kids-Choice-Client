@@ -1,7 +1,7 @@
 import useTitle from "../../Hooks/useTitle";
 
 const Mytoy = () => {
-    useTitle('My toys')
+    useTitle('My Toys')
     return (
         <div>
             this is my toy pages
