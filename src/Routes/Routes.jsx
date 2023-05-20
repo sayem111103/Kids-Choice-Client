@@ -10,6 +10,7 @@ import PrivateRoutes from "./PrivateRoutes";
 import Error from "../Pages/Error/Error";
 import Alltoy from "../Pages/Alltoy/Alltoy";
 import Update from "../Pages/Update/Update";
+import Details from "../Pages/Details/Details";
 
 const router = createBrowserRouter([
     {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
                 path: 'update/:id',
                 element: <Update></Update>,
                 loader: ({params})=>fetch(`https://toy-marketplace-server-sayem111103.vercel.app/mytoy/${params.id}`)
+            },
+            {
+                path:'details/:id',
+                element:<Details></Details>
             }
         ]
     },

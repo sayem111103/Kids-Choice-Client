@@ -7,8 +7,8 @@ const Footer = () => {
         <>
             <footer className="footer p-10 text-base-content mt-4">
                 <div className='mx-auto'>
-                    <Link to='/'><img src={logo} alt={logo} /></Link>
-                    <div className='flex'>
+                    <Link className='mx-auto' to='/'><img src={logo} alt={logo} /></Link>
+                    <div className='flex mx-auto'>
                         <a href="#"><FaFacebook className='mr-5 text-xl text-blue-600' ></FaFacebook></a>
                         <a href="#"><BsTwitter className='mr-5 text-xl text-blue-600'></BsTwitter></a>
                         <a href="#"><BsInstagram className='mr-5 text-xl text-red-600'></BsInstagram></a>
@@ -17,14 +17,14 @@ const Footer = () => {
                 </div>
                 <div className='mx-auto'>
                     <span className="footer-title">Company</span>
-                    <a href='#' className="link link-hover">About us</a>
-                    <a href='#' className="link link-hover">Contact</a>
+                    <a href='#' className="link link-hover mx-auto">About us</a>
+                    <a href='#' className="link link-hover mx-auto">Contact</a>
                 </div>
                 <div className='mx-auto'>
-                    <span className="footer-title">Legal</span>
-                    <a href='#' className="link link-hover">Terms of use</a>
-                    <a href='#' className="link link-hover">Privacy policy</a>
-                    <a href='#' className="link link-hover">Cookie policy</a>
+                    <span className="footer-title mx-auto">Legal</span>
+                    <a href='#' className="link link-hover mx-auto">Terms of use</a>
+                    <a href='#' className="link link-hover mx-auto">Privacy policy</a>
+                    <a href='#' className="link link-hover mx-auto">Cookie policy</a>
                 </div>
             </footer>
             <footer className="footer footer-center p-4 bg-base-300 text-base-content">

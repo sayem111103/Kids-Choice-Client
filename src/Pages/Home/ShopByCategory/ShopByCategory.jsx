@@ -23,7 +23,7 @@ const ShopByCategory = () => {
     }
     return (
         <section className="py-20 bg-base-200">
-            <h3 className="text-center text-4xl mb-8 font-bold uppercase">Shop By Category</h3>
+            <h3 className="text-center text-2xl lg:text-4xl mb-8 font-bold uppercase">Shop By Category</h3>
             <div className='text-center'>
                 <Tabs>
                     <TabList>
@@ -33,7 +33,7 @@ const ShopByCategory = () => {
                     </TabList>
 
                     <TabPanel>
-                        <div className='flex justify-center flex-wrap gap-6 mt-8'>
+                        <div className='flex justify-center flex-wrap gap-6 mt-8 px-3'>
                             {carData.map(cd =>
                                 <div key={cd._id} className="card w-[370px] bg-base-100 shadow-xl">
                                     <figure><img className="h-60 w-full" src={cd.img} alt={cd.img} /></figure>
@@ -42,10 +42,10 @@ const ShopByCategory = () => {
                                             {cd.name}
                                             <div className="badge badge-secondary">NEW</div>
                                         </h2>
-                                        <p className='text-justify font-thin'>{cd.description}</p>
+                                        <p className='text-justify text-xs lg:text-sm font-thin'>{cd.description}</p>
                                         <div className="card-actions justify-between items-center">
                                             <div>
-                                                <button className='btn'>View Details</button>
+                                                <button className='btn text-xs lg:text-sm'>View Details</button>
                                             </div>
                                             <div>
                                                 <div className="badge badge-outline">{cd.subCategory}</div>
@@ -58,7 +58,7 @@ const ShopByCategory = () => {
                     </TabPanel>
 
                     <TabPanel>
-                        <div className='flex justify-center flex-wrap gap-6 mt-8'>
+                        <div className='flex justify-center flex-wrap gap-6 mt-8 px-3'>
                             {carData.map(cd =>
                                 <div key={cd._id} className="card w-[370px] bg-base-100 shadow-xl">
                                     <figure><img className="h-60 w-full" src={cd.img} alt={cd.img} /></figure>
@@ -67,10 +67,10 @@ const ShopByCategory = () => {
                                             {cd.name}
                                             <div className="badge badge-secondary">NEW</div>
                                         </h2>
-                                        <p className='text-justify'>{cd.description}</p>
+                                        <p className='text-justify text-xs lg:text-sm font-thin'>{cd.description}</p>
                                         <div className="card-actions justify-between items-center">
                                             <div>
-                                                <button className='btn'>View Details</button>
+                                                <button className='btn text-xs lg:text-sm'>View Details</button>
                                             </div>
                                             <div>
                                                 <div className="badge badge-outline">{cd.subCategory}</div>
@@ -83,7 +83,7 @@ const ShopByCategory = () => {
                     </TabPanel>
 
                     <TabPanel>
-                        <div className='flex justify-center flex-wrap gap-6 mt-8'>
+                        <div className='flex justify-center flex-wrap gap-6 mt-8 px-3'>
                             {carData.map(cd =>
                                 <div key={cd._id} className="card w-[370px] bg-base-100 shadow-xl">
                                     <figure><img className="h-60 w-full" src={cd.img} alt={cd.img} /></figure>
@@ -92,10 +92,10 @@ const ShopByCategory = () => {
                                             {cd.name}
                                             <div className="badge badge-secondary">NEW</div>
                                         </h2>
-                                        <p className='text-justify'>{cd.description}</p>
+                                        <p className='text-justify text-xs lg:text-sm font-thin'>{cd.description}</p>
                                         <div className="card-actions justify-between items-center">
                                             <div>
-                                                <button className='btn'>View Details</button>
+                                                <button className='btn text-xs lg:text-sm'>View Details</button>
                                             </div>
                                             <div>
                                                 <div className="badge badge-outline">{cd.subCategory}</div>
