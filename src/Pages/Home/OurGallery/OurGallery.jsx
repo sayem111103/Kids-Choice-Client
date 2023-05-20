@@ -8,10 +8,10 @@ const OurGallery = () => {
         fetch('https://toy-marketplace-server-sayem111103.vercel.app/allToy')
         .then(res=> res.json())
         .then(data=> setGal(data))
-    })
+    },[gal])
     return (
         <section className="py-20 bg-base-300">
-            <h3 className="text-center text-4xl mb-8 font-bold">Our Gallery</h3>
+            <h3 className="text-center text-4xl mb-8 font-bold uppercase">Our Gallery</h3>
             <div>
                 <div className="px-5 grid grid-cols-3 gap-6">
                     {gal.map(gd=><div key={gd._id} className="toy-item overflow-hidden relative mx-auto">

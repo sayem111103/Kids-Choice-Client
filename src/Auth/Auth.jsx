@@ -8,14 +8,17 @@ const Auth = ({ children }) => {
     const [loader, setLoader] = useState(true)
 
     const userWithEmailPass = (email, password) => {
+        setLoader(true)
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
     const signinWithEmailPass = (email, password) => {
+        setLoader(true)
         return signInWithEmailAndPassword(auth, email, password)
     }
 
     const signWithGoogle = (Provider) => {
+        setLoader(true)
         return signInWithPopup(auth, Provider)
     }
 
