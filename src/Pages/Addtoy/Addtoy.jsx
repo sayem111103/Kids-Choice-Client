@@ -2,6 +2,7 @@ import useTitle from "../../Hooks/useTitle";
 import { useForm } from "react-hook-form";
 import { useContext } from "react";
 import { authContext } from "../../Auth/Auth";
+import Swal from "sweetalert2";
 
 const Addtoy = () => {
     const { user } = useContext(authContext);
@@ -10,7 +11,31 @@ const Addtoy = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
 
     const onSubmit = data => {
-        console.log(data);
+        if (parseFloat(data.rating) < 0 || parseFloat(data.rating) > 5 || parseFloat(data.price) < 1 || parseFloat(data.availableQuantity) < 0) {
+            return Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Please Provide Valid Number!!!'
+            })
+        }
+        else {
+            fetch('https://toy-marketplace-server-sayem111103.vercel.app/allToy', {
+                method: "POST",
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.acknowledged === true) {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Successfully Added'
+                        })
+                    }
+                })
+        }
     };
 
     return (
