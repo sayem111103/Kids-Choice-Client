@@ -21,7 +21,6 @@ const Alltoy = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {/* row 1 */}
                         {data.slice(0, 20).map(cd => <tr key={cd._id}>
                             <td>
                                 <div className="flex items-center space-x-3">
