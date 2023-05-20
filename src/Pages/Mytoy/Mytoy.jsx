@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import useTitle from "../../Hooks/useTitle";
 import { authContext } from "../../Auth/Auth";
 import { RiDeleteBin6Fill, BiEdit } from 'react-icons/all';
+import Swal from "sweetalert2";
 
 const Mytoy = () => {
     const { user } = useContext(authContext)
@@ -12,7 +13,43 @@ const Mytoy = () => {
         fetch(`https://toy-marketplace-server-sayem111103.vercel.app/mytoy?email=${user.email}`)
             .then(res => res.json())
             .then(data => setMyToy(data))
-    }, [])
+    }, []);
+
+    const handleDelete = (id) => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success'
+                )
+
+                fetch(`https://toy-marketplace-server-sayem111103.vercel.app/mytoy/${id}`, {
+                    method: "DELETE"
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.acknowledged === true) {
+                            const remaining = mytoy.filter(mt => mt._id !== id)
+                            setMyToy(remaining)
+                        }
+                    })
+            }
+        })
+    }
+
+    const handleEdit = () => {
+
+    }
+
     return (
         <section className="pb-14">
             <h3 className="text-center mb-10 text-6xl font-extrabold uppercase">My Toys</h3>
@@ -41,24 +78,24 @@ const Mytoy = () => {
                                         </div>
                                     </div>
                                     <div>
-                                        <div className="font-bold">{cd.name}</div>
+                                        <div className="font-bold capitalize">{cd.name}</div>
                                     </div>
                                 </div>
                             </td>
-                            <td>
+                            <td className="uppercase">
                                 {cd.sellerName}
                             </td>
-                            <td>{cd.subCategory}</td>
+                            <td className="capitalize">{cd.subCategory}</td>
                             <td>${cd.price}</td>
                             <td className="text-center">{cd.availableQuantity}</td>
                             <th>
-                                <RiDeleteBin6Fill className="text-3xl mx-auto text-red-500 cursor-pointer"></RiDeleteBin6Fill>
+                                <RiDeleteBin6Fill onClick={() => handleDelete(cd._id)} className="text-3xl mx-auto text-red-500 cursor-pointer"></RiDeleteBin6Fill>
                             </th>
                             <th>
-                                <BiEdit className="text-3xl mx-auto cursor-pointer"></BiEdit>
+                                <BiEdit onClick={() => console.log(cd._id)} className="text-3xl mx-auto cursor-pointer"></BiEdit>
                             </th>
                             <th className="text-center">
-                                <button className="btn">details</button>
+                                <button onClick={() => console.log(cd._id)} className="btn">details</button>
                             </th>
                         </tr>)}
                     </tbody>

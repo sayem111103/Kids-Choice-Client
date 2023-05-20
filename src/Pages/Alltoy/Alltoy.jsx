@@ -29,15 +29,15 @@ const Alltoy = () => {
                                             <img src={cd.img} alt={cd.img} />
                                         </div>
                                     </div>
-                                    <div>
+                                    <div className="capitalize">
                                         <div className="font-bold">{cd.name}</div>
                                     </div>
                                 </div>
                             </td>
-                            <td>
+                            <td className="uppercase">
                                 {cd.sellerName}
                             </td>
-                            <td>{cd.subCategory}</td>
+                            <td className="capitalize">{cd.subCategory}</td>
                             <td>${cd.price}</td>
                             <td className="text-center">{cd.availableQuantity}</td>
                             <th>
