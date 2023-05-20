@@ -16,7 +16,7 @@ const Home = () => {
                 autoplay
                 loop
                 src="https://assets6.lottiefiles.com/packages/lf20_p8bfn5to.json"
-                style={{ height: '300px', width: '300px' }}
+                style={{ height: '200px', width: '200px' }}
             >
                 <Controls buttons={['play', 'repeat', 'frame', 'debug']} />
             </Player>

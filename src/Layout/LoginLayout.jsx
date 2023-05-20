@@ -6,7 +6,9 @@ const LoginLayout = () => {
     return (
         <>
             <Navbar></Navbar>
+            <div className='w-[95%] mx-auto'>
             <Outlet></Outlet>
+            </div>
             <Footer></Footer>
         </>
     );

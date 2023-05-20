@@ -5,7 +5,7 @@ import { RiDeleteBin6Fill, BiEdit } from 'react-icons/all';
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 
-const Mytoy = () => {    
+const Mytoy = () => {
     const { user } = useContext(authContext)
     const [mytoy, setMyToy] = useState([])
     useTitle('My Toys')
