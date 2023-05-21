@@ -34,7 +34,7 @@ const ShopByCategory = () => {
                     </TabList>
 
                     <TabPanel>
-                        <div className='flex justify-center flex-wrap gap-6 mt-8 px-3'>
+                        <div data-aos="fade-up" className='flex justify-center flex-wrap gap-6 mt-8 px-3'>
                             {carData.map(cd =>
                                 <div key={cd._id} className="card w-[370px] bg-base-100 shadow-xl">
                                     <figure><img className="h-60 w-full" src={cd.img} alt={cd.img} /></figure>

@@ -12,6 +12,7 @@ import Alltoy from "../Pages/Alltoy/Alltoy";
 import Update from "../Pages/Update/Update";
 import Details from "../Pages/Details/Details";
 import Checkout from "../Pages/Checkout/Checkout";
+import Blogs from "../Pages/Blogs/Blogs";
 
 const router = createBrowserRouter([
     {
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
             {
                 path: 'checkout',
                 element: <PrivateRoutes><Checkout></Checkout></PrivateRoutes>
+            },
+            {
+                path: 'blogs',
+                element: <Blogs></Blogs>
             }
         ]
     },

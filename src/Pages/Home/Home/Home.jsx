@@ -7,8 +7,17 @@ import { authContext } from "../../../Auth/Auth";
 import { Controls, Player } from "@lottiefiles/react-lottie-player";
 import ShopByCategory from "../ShopByCategory/ShopByCategory";
 import GetInTouch from "../GetInTouch/GetInTouch";
+import Aos from "aos";
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
 
 const Home = () => {
+    useEffect(() => {
+        Aos.init({
+            duration: 2000
+        })
+    }, [])
+
     useTitle('Home')
     const { loader } = useContext(authContext);
     if (loader) {

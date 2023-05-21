@@ -2,7 +2,7 @@ const AboutUs = () => {
     return (
         <section id="about" className="py-20 bg-base-200">
             <h3 className="text-center text-2xl lg:text-4xl mb-3 lg:mb-8 font-bold uppercase">About Us</h3>
-            <div className="w-9/12 mx-auto">
+            <div data-aos="fade-up" className="w-9/12 mx-auto">
                 <p className="text-center text-xs lg:text-sm font-thin">Toy Shop - Where Imagination Comes to Life!. At <b className="font-bold">Kids Choice</b>, we are passionate about cars and dedicated to providing the best car toy shopping experience for young automobile enthusiasts. Our mission is to fuel the imaginations of children and ignite their love for cars through a wide selection of high-quality and exciting car toys.</p>
                 <p className="text-justify mt-5 text-xs lg:text-sm font-thin"><span className="font-bold">Expertise and Quality: </span>
                     With years of experience in the toy industry, our team has developed a deep understanding of what makes a great car toy. We carefully curate our collection, partnering with trusted manufacturers who share our commitment to quality, safety, and attention to detail. Each car toy in our shop is built to withstand the adventures of playtime and inspire endless hours of imaginative fun.</p>

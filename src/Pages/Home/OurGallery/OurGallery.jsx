@@ -12,7 +12,7 @@ const OurGallery = () => {
     return (
         <section className="py-20 bg-base-300">
             <h3 className="text-center text-2xl lg:text-4xl mb-8 font-bold uppercase">Our Gallery</h3>
-            <div>
+            <div data-aos="fade-up">
                 <div className="px-5 lg:grid grid-cols-3 gap-6">
                     {gal.slice(0, 6).map(gd => <div key={gd._id} className="toy-item mb-4 w-9/12 overflow-hidden relative mx-auto">
                         <img className="image h-80 w-full" src={gd.img} alt={gd.img} />
