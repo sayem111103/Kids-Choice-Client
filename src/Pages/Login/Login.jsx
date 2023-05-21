@@ -65,13 +65,13 @@ const Login = () => {
 
     return (
         <>
-            <div className="min-h-screen py-16 bg-base-200">
+            <div className="min-h-screen py-16 bg-base-200 px-2 lg:px-0">
                 <div>
                     <div className="text-center">
                         <h1 className="text-5xl font-bold">Login now!</h1>
                         <p className="py-6">For Better Experience!!</p>
                     </div>
-                    <div className="card w-1/3 mx-auto shadow-2xl bg-base-100">
+                    <div className="card lg:w-1/3 mx-auto shadow-2xl bg-base-100">
                         <form onSubmit={handleLogin} className="card-body">
                             <p className='text-red-500'>{error}</p>
                             <div className="form-control">
@@ -92,7 +92,7 @@ const Login = () => {
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Login</button>
                             </div>
-                            <p>Don't have an account? <Link to='/registration' className='text-blue-500'>click here to Register</Link></p>
+                            <p className='text-center'>Don't have an account? <Link to='/registration' className='text-blue-500'>click here to Register</Link></p>
                             <div className="flex flex-col w-full border-opacity-50">
                                 <div className="divider">OR</div>
                                 <div className="grid h-20 card place-items-center">

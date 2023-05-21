@@ -48,7 +48,7 @@ const Mytoy = () => {
 
     return (
         <section className="pb-14">
-            <h3 className="text-center mb-10 text-6xl font-extrabold uppercase">My Toys</h3>
+            <h3 className="text-center mb-10 lg:text-6xl text-2xl font-extrabold uppercase">My Toys</h3>
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
                     {/* head */}
@@ -91,7 +91,7 @@ const Mytoy = () => {
                                 <Link to={`/update/${cd._id}`}><BiEdit className="text-3xl mx-auto cursor-pointer"></BiEdit></Link>
                             </th>
                             <th className="text-center">
-                                <button onClick={() => console.log(cd._id)} className="btn">details</button>
+                                <Link to={`/details/${cd._id}`}><button className="btn">details</button></Link>
                             </th>
                         </tr>)}
                     </tbody>

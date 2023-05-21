@@ -44,7 +44,7 @@ const Addtoy = () => {
 
     return (
         <section className="pb-14 border-t border-b">
-            <h3 className="text-center text-6xl font-extrabold uppercase mt-4">Add Toy</h3>
+            <h3 className="text-center lg:text-6xl text-2xl font-extrabold uppercase mt-4">Add Toy</h3>
             <form className="card mx-auto shadow-2xl bg-base-100 card-body" onSubmit={handleSubmit(onSubmit)}>
                 {/* register your input into the hook by invoking the "register" function */}
                 <div className="flex gap-6">

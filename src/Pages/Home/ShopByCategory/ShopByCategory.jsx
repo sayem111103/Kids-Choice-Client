@@ -2,6 +2,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import './ShopByCategory.css'
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const ShopByCategory = () => {
     const [carData, setCarData] = useState([])
@@ -45,7 +46,7 @@ const ShopByCategory = () => {
                                         <p className='text-justify text-xs lg:text-sm font-thin'>{cd.description}</p>
                                         <div className="card-actions justify-between items-center">
                                             <div>
-                                                <button className='btn text-xs lg:text-sm'>View Details</button>
+                                                <Link to={`/details/${cd._id}`}><button className='btn text-xs lg:text-sm'>View Details</button></Link>
                                             </div>
                                             <div>
                                                 <div className="badge badge-outline">{cd.subCategory}</div>
@@ -70,7 +71,7 @@ const ShopByCategory = () => {
                                         <p className='text-justify text-xs lg:text-sm font-thin'>{cd.description}</p>
                                         <div className="card-actions justify-between items-center">
                                             <div>
-                                                <button className='btn text-xs lg:text-sm'>View Details</button>
+                                                <Link to={`/details/${cd._id}`}><button className='btn text-xs lg:text-sm'>View Details</button></Link>
                                             </div>
                                             <div>
                                                 <div className="badge badge-outline">{cd.subCategory}</div>
@@ -95,7 +96,7 @@ const ShopByCategory = () => {
                                         <p className='text-justify text-xs lg:text-sm font-thin'>{cd.description}</p>
                                         <div className="card-actions justify-between items-center">
                                             <div>
-                                                <button className='btn text-xs lg:text-sm'>View Details</button>
+                                                <Link to={`/details/${cd._id}`}><button className='btn text-xs lg:text-sm'>View Details</button></Link>
                                             </div>
                                             <div>
                                                 <div className="badge badge-outline">{cd.subCategory}</div>

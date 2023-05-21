@@ -61,12 +61,12 @@ const Registration = () => {
     }
 
     return (
-        <div className="min-h-screen py-16 bg-base-200">
+        <div className="min-h-screen py-16 bg-base-200 px-2 lg:px-0">
             <div className="text-center">
                 <h1 className="text-5xl font-bold">Register now!</h1>
                 <p className="py-6">For Better Experience!!</p>
             </div>
-            <form className="card w-1/3 mx-auto shadow-2xl bg-base-100 card-body" onSubmit={handleSubmit(onSubmit)}>
+            <form className="card lg:w-1/3 mx-auto shadow-2xl bg-base-100 card-body" onSubmit={handleSubmit(onSubmit)}>
                 <p className="text-red-500">{error}</p>
                 {/* register your input into the hook by invoking the "register" function */}
                 <div className="form-control">
@@ -104,7 +104,7 @@ const Registration = () => {
                 {errors.password && <span className="text-red-500">This field is required</span>}
 
                 <input className="btn btn-primary mt-4" type="submit" value='register' />
-                <p>Already have an account? <Link to='/login' className='text-blue-500'>click here to Login</Link></p>
+                <p className="text-center">Already have an account? <Link to='/login' className='text-blue-500'>click here to Login</Link></p>
             </form>
         </div>
     );

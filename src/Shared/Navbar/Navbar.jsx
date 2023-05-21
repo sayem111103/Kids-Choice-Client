@@ -23,11 +23,11 @@ const Navbar = () => {
     }
 
     const navitem = <>
-        <li><Link className='text-sm font-bold uppercase' to='/'>Home</Link></li>
-        <li><Link className='text-sm font-bold uppercase' to='/alltoys'>All Toys</Link></li>
-        {user ? <><li><Link className='text-sm font-bold uppercase' to='/mytoys'>My Toys</Link></li>
-            <li><Link className='text-sm font-bold uppercase' to='/addtoy'>Add Toy</Link></li></> : ''}
-        <li><Link className='text-sm font-bold uppercase' to='/blogs'>Blogs</Link></li>
+        <li><Link className='lg:text-sm text-xs justify-center font-bold uppercase' to='/'>Home</Link></li>
+        <li><Link className='lg:text-sm text-xs justify-center font-bold uppercase' to='/alltoys'>All Toys</Link></li>
+        {user ? <><li><Link className='lg:text-sm text-xs justify-center font-bold uppercase' to='/mytoys'>My Toys</Link></li>
+            <li><Link className='lg:text-sm text-xs justify-center font-bold uppercase' to='/addtoy'>Add Toy</Link></li></> : ''}
+        <li><Link className='lg:text-sm text-xs justify-center font-bold uppercase' to='/blogs'>Blogs</Link></li>
     </>
     return (
         <>

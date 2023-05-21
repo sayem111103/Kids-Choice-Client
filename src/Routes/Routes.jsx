@@ -11,12 +11,13 @@ import Error from "../Pages/Error/Error";
 import Alltoy from "../Pages/Alltoy/Alltoy";
 import Update from "../Pages/Update/Update";
 import Details from "../Pages/Details/Details";
+import Checkout from "../Pages/Checkout/Checkout";
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <Main></Main>,
-        errorElement:<Error></Error>,
+        errorElement: <Error></Error>,
         children: [
             {
                 path: '/',
@@ -25,7 +26,7 @@ const router = createBrowserRouter([
             {
                 path: 'alltoys',
                 element: <PrivateRoutes><Alltoy></Alltoy></PrivateRoutes>,
-                loader: ()=> fetch('https://toy-marketplace-server-sayem111103.vercel.app/allToy')
+                loader: () => fetch('https://toy-marketplace-server-sayem111103.vercel.app/allToy')
             },
             {
                 path: 'addtoy',
@@ -38,11 +39,16 @@ const router = createBrowserRouter([
             {
                 path: 'update/:id',
                 element: <Update></Update>,
-                loader: ({params})=>fetch(`https://toy-marketplace-server-sayem111103.vercel.app/mytoy/${params.id}`)
+                loader: ({ params }) => fetch(`https://toy-marketplace-server-sayem111103.vercel.app/mytoy/${params.id}`)
             },
             {
-                path:'details/:id',
-                element:<Details></Details>
+                path: 'details/:id',
+                element: <PrivateRoutes><Details></Details></PrivateRoutes>,
+                loader: ({ params }) => fetch(`https://toy-marketplace-server-sayem111103.vercel.app/toydetails/${params.id}`)
+            },
+            {
+                path: 'checkout',
+                element: <PrivateRoutes><Checkout></Checkout></PrivateRoutes>
             }
         ]
     },
@@ -50,7 +56,7 @@ const router = createBrowserRouter([
     {
         path: '/',
         element: <LoginLayout></LoginLayout>,
-        errorElement:<Error></Error>,
+        errorElement: <Error></Error>,
         children: [
             {
                 path: 'login',
