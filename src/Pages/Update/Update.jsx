@@ -48,14 +48,14 @@ const Update = () => {
                         <label className="label">
                             <span className="label-text font-bold">Toy Name</span>
                         </label>
-                        <input type="text" className="input input-bordered" defaultValue={toyData.name} {...register("name", { required: true })} />
+                        <input type="text" className="input input-bordered" defaultValue={toyData?.name} {...register("name", { required: true })} />
                     </div>
 
                     <div className="form-control w-1/2">
                         <label className="label">
                             <span className="label-text font-bold">Photo</span>
                         </label>
-                        <input type="url" className="input input-bordered" defaultValue={toyData.img} {...register("img", { required: true })} />
+                        <input type="url" className="input input-bordered" defaultValue={toyData?.img} {...register("img", { required: true })} />
                     </div>
                 </div>
 
@@ -64,14 +64,14 @@ const Update = () => {
                         <label className="label">
                             <span className="label-text font-bold">Seller Name</span>
                         </label>
-                        <input type="text" className="input input-bordered" defaultValue={toyData.sellerName} {...register("sellerName", { required: true })} />
+                        <input type="text" className="input input-bordered" defaultValue={toyData?.sellerName} {...register("sellerName", { required: true })} />
                     </div>
 
                     <div className="form-control w-1/2">
                         <label className="label">
                             <span className="label-text font-bold">Seller Email</span>
                         </label>
-                        <input type="email" className="input input-bordered" defaultValue={toyData.sellerEmail} {...register("sellerEmail", { required: true })} />
+                        <input type="email" className="input input-bordered" defaultValue={toyData?.sellerEmail} {...register("sellerEmail", { required: true })} />
                     </div>
                 </div>
 
@@ -91,7 +91,7 @@ const Update = () => {
                         <label className="label">
                             <span className="label-text font-bold">Price</span>
                         </label>
-                        <input type="number" className="input input-bordered" defaultValue={toyData.price} {...register("price", { required: true })} />
+                        <input type="number" className="input input-bordered" defaultValue={toyData?.price} {...register("price", { required: true })} />
                     </div>
                 </div>
 
@@ -100,14 +100,14 @@ const Update = () => {
                         <label className="label">
                             <span className="label-text font-bold">Rating</span>
                         </label>
-                        <input type="number" className="input input-bordered" defaultValue={toyData.rating} {...register("rating", { required: true })} />
+                        <input type="number" className="input input-bordered" defaultValue={toyData?.rating} {...register("rating", { required: true })} />
                     </div>
 
                     <div className="form-control w-1/2">
                         <label className="label">
                             <span className="label-text font-bold">Available quantity</span>
                         </label>
-                        <input type="number" className="input input-bordered" defaultValue={toyData.availableQuantity} {...register("availableQuantity", { required: true })} />
+                        <input type="number" className="input input-bordered" defaultValue={toyData?.availableQuantity} {...register("availableQuantity", { required: true })} />
                     </div>
                 </div>
 
@@ -115,7 +115,7 @@ const Update = () => {
                     <label className="label">
                         <span className="label-text font-bold">Detail description</span>
                     </label>
-                    <textarea className="textarea textarea-bordered" defaultValue={toyData.description} {...register("description", { required: true })} />
+                    <textarea className="textarea textarea-bordered" defaultValue={toyData?.description} {...register("description", { required: true })} />
                 </div>
                 <input className="btn btn-primary mt-4" type="submit" value='Update Toy' />
             </form>

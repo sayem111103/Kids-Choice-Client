@@ -77,7 +77,7 @@ const Mytoy = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {mytoy.slice(0, 20).map(cd => <tr key={cd._id}>
+                        {mytoy?.slice(0, 20).map(cd => <tr key={cd._id}>
                             <td>
                                 <div className="flex items-center space-x-3">
                                     <div className="avatar">
