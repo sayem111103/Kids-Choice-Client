@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { authContext } from "../../Auth/Auth";
 import useTitle from "../../Hooks/useTitle";
+import { Controls, Player } from "@lottiefiles/react-lottie-player";
 
 const Blogs = () => {
     const { loader } = useContext(authContext);
