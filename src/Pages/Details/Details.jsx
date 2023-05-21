@@ -4,7 +4,7 @@ const Details = () => {
     const { availableQuantity, description, img, name, price, rating, sellerEmail, sellerName, subCategory, _id } = useLoaderData();
     return (
         <>
-            <section className="py-[100px] bg-[rgba(0,0,0,0.6)]" style={{ backgroundImage: `url(${img})`, backgroundBlendMode: 'multiply', backgroundSize: 'cover', backgroundAttachment: 'fixed', backgroundPosition: 'center' }}>
+            <section className="py-[100px] rounded-lg bg-[rgba(0,0,0,0.6)]" style={{ backgroundImage: `url(${img})`, backgroundBlendMode: 'multiply', backgroundSize: 'cover', backgroundAttachment: 'fixed', backgroundPosition: 'center' }}>
                 <h3 className="text-white text-2xl lg:text-6xl font-extrabold text-center">Toy Details</h3>
                 <div className="lg:w-1/2 w-9/12 mx-auto">
                     <p className="text-white capitalize lg:text-xl text-xs font-thin mt-4"><span className="text-sm lg:text-2xl font-semibold capitalize">toy name : </span>{name}</p>

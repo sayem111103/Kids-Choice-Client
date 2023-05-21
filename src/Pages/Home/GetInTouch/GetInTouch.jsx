@@ -2,7 +2,7 @@ import { FaPhoneAlt, HiMail } from 'react-icons/all';
 
 const GetInTouch = () => {
     return (
-        <section className="py-20 bg-base-300">
+        <section className="py-20 bg-base-300 rounded-br-lg rounded-bl-lg">
             <h3 className="text-center text-2xl lg:text-4xl mb-3 lg:mb-8 font-bold uppercase">Get in touch</h3>
             <div>
                 <div className='text-center mb-4'>
