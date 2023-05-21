@@ -1,6 +1,6 @@
 const AboutUs = () => {
     return (
-        <section className="py-20 bg-base-200">
+        <section id="about" className="py-20 bg-base-200">
             <h3 className="text-center text-2xl lg:text-4xl mb-3 lg:mb-8 font-bold uppercase">About Us</h3>
             <div className="w-9/12 mx-auto">
                 <p className="text-center text-xs lg:text-sm font-thin">Toy Shop - Where Imagination Comes to Life!. At <b className="font-bold">Kids Choice</b>, we are passionate about cars and dedicated to providing the best car toy shopping experience for young automobile enthusiasts. Our mission is to fuel the imaginations of children and ignite their love for cars through a wide selection of high-quality and exciting car toys.</p>

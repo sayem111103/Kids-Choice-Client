@@ -46,12 +46,12 @@ const Mytoy = () => {
         })
     }
 
-    const handleSort = (e) =>{
+    const handleSort = (e) => {
         const price = e.target.value;
 
         fetch(`https://toy-marketplace-server-sayem111103.vercel.app/toysorting?email=${user.email}&&sort=${price}`)
-        .then(res => res.json())
-        .then(data => setMyToy(data))
+            .then(res => res.json())
+            .then(data => setMyToy(data))
     }
 
     return (

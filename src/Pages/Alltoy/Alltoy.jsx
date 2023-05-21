@@ -13,6 +13,7 @@ const Alltoy = () => {
         .then(res => res.json())
         .then(data=> setToy(data))
     }
+    
     return (
         <section className="pb-14">
             <h3 className="text-center mb-10 lg:text-6xl text-2xl font-extrabold uppercase">All Toys</h3>

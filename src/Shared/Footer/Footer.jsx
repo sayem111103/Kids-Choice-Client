@@ -17,8 +17,8 @@ const Footer = () => {
                 </div>
                 <div className='mx-auto'>
                     <span className="footer-title">Company</span>
-                    <a href='#' className="link link-hover mx-auto">About us</a>
-                    <a href='#' className="link link-hover mx-auto">Contact</a>
+                    <a href='#about' className="link link-hover mx-auto">About us</a>
+                    <a href='#getintouch' className="link link-hover mx-auto">Contact</a>
                 </div>
                 <div className='mx-auto'>
                     <span className="footer-title mx-auto">Legal</span>
