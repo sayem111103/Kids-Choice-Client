@@ -6,6 +6,7 @@ import OurGallery from "../OurGallery/OurGallery";
 import { authContext } from "../../../Auth/Auth";
 import { Controls, Player } from "@lottiefiles/react-lottie-player";
 import ShopByCategory from "../ShopByCategory/ShopByCategory";
+import GetInTouch from "../GetInTouch/GetInTouch";
 
 const Home = () => {
     useTitle('Home')
@@ -28,6 +29,7 @@ const Home = () => {
             <AboutUs></AboutUs>
             <OurGallery></OurGallery>
             <ShopByCategory></ShopByCategory>
+            <GetInTouch></GetInTouch>
         </>
     );
 };
