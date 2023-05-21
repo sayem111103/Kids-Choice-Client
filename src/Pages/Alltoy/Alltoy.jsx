@@ -9,7 +9,6 @@ const Alltoy = () => {
     const handleSearch = (e) => {
         e.preventDefault()
         const toyName = e.target.search.value;
-        console.log(toyName);
         fetch(`https://toy-marketplace-server-sayem111103.vercel.app/toysearch/${toyName}`)
         .then(res => res.json())
         .then(data=> setToy(data))

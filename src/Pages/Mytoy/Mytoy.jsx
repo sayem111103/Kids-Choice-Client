@@ -46,6 +46,14 @@ const Mytoy = () => {
         })
     }
 
+    const handleSort = (e) =>{
+        const price = e.target.value;
+
+        fetch(`https://toy-marketplace-server-sayem111103.vercel.app/toysorting?email=${user.email}&&sort=${price}`)
+        .then(res => res.json())
+        .then(data => setMyToy(data))
+    }
+
     return (
         <section className="pb-14">
             <h3 className="text-center mb-10 lg:text-6xl text-2xl font-extrabold uppercase">My Toys</h3>
@@ -59,9 +67,13 @@ const Mytoy = () => {
                             <th>Category</th>
                             <th>Price</th>
                             <th className="text-center">Available Quantity</th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
+                            <th colSpan={3}><div className="form-control w-full max-w-xs">
+                                <select onChange={handleSort} className="select capitalize select-bordered">
+                                    <option disabled selected>Sort By Price</option>
+                                    <option className="capitalize" value='1'>low to high</option>
+                                    <option className="capitalize" value='-1'>high to low</option>
+                                </select>
+                            </div></th>
                         </tr>
                     </thead>
                     <tbody>

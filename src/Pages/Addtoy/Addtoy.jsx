@@ -35,7 +35,7 @@ const Addtoy = () => {
                             icon: 'success',
                             title: 'Successfully Added'
                         })
-
+                        
                         navigate('/mytoys')
                     }
                 })
